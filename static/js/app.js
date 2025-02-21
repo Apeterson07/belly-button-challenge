@@ -1,11 +1,7 @@
 // Build the metadata panel
-
 function buildMetadata(sample) {
   d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
-    console.log(data);
-    console.log( typeof data);
-    console.log(Object.keys(data));
-
+    
     // get the metadata field
     let metadata = data.metadata;
     
@@ -21,9 +17,7 @@ function buildMetadata(sample) {
 
     // Inside a loop, you will need to use d3 to append new
     // tags for each key-value in the filtered metadata.
-
     let metadata_keys = Object.keys(sample_metadata);
-
     for (let i=0; i < metadata_keys.length; i++){
       // get key/value pair
       let key = metadata_keys[i].toUpperCase();
@@ -43,7 +37,7 @@ function buildCharts(sample) {
 
     // Get the samples field
     let samples = data.samples;
-    console.log(samples);
+    
 
     // Filter the samples for the object with the desired sample number
     let sample_data= samples.filter(row => row.id == sample)[0];
@@ -104,7 +98,7 @@ function buildCharts(sample) {
       type: 'bar',
       hovertext: otu_labels.slice(0, 10).reverse(),
       marker: {
-        color: 'sky blue'
+        color: 'blue'
     },
     orientation: 'h'
   }
@@ -137,7 +131,7 @@ function init() {
 
     // Get the names field
     let names = data.names;
-    console.log(names)
+    
     // Use d3 to select the dropdown with id of `#selDataset`
     let dropdownMenu = d3.select("#selDataset");
 

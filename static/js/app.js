@@ -89,9 +89,6 @@ function buildCharts(sample) {
 
     // Build a Bar Chart
     // Don't forget to slice and reverse the input data appropriately
-
-
-    // Render the Bar Chart
     let bar_trace = {
       y: bar_ticks.slice(0, 10).reverse(),
       x: sample_values.slice(0, 10).reverse(),
